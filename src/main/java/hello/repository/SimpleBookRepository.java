@@ -1,7 +1,9 @@
 package hello.repository;
 
 import hello.model.Book;
+import org.springframework.stereotype.Component;
 
+@Component
 public class SimpleBookRepository implements BookRepository {
   
   @Override
