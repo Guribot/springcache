@@ -1,12 +1,14 @@
 package hello.repository;
 
 import hello.model.Book;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Component;
 
 @Component
 public class SimpleBookRepository implements BookRepository {
   
   @Override
+  @Cacheable("books")
   public Book getBookByISBN(String isbn) {
     simulateSlowService();
     return new Book(isbn, "Some Cool Book");
